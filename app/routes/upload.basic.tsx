@@ -90,7 +90,7 @@ export async function action({ request }: ActionFunctionArgs) {
   return redirect("/upload/basic");
 }
 
-export default function UploadWithProgressBar() {
+export default function BasicExample() {
   const loaderData = useLoaderData<typeof loader>();
   const currentPath = useResolvedPath(".");
 
@@ -99,7 +99,7 @@ export default function UploadWithProgressBar() {
   return (
     <section className="flex flex-col gap-8">
       <header className="flex flex-col gap-2">
-        <h3 className="text-xl font-bold">Basic Upload</h3>
+        <h3 className="text-xl font-bold">Basic Example</h3>
         <p className="text-muted-foreground">
           This example showcases a basic implementation of an observable file
           upload by utilizing an file input field an a action. Although the
@@ -122,7 +122,7 @@ export default function UploadWithProgressBar() {
           encType="multipart/form-data"
           action={`${currentPath.pathname}?uploadId=${loaderData.uploadId}`}
         >
-          <input name="my-file" type="file" />
+          <input name="the-file" type="file" />
 
           <Button type="submit">Upload</Button>
 
