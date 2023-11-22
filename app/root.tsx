@@ -27,7 +27,8 @@ import {
 } from "@remix-run/react";
 
 import { json } from "@remix-run/node";
-import { Confetti } from "~/components/Confetti";
+
+import { Confetti } from "~/components/Confetti.tsx";
 import { getConfetti } from "./utils/confetti.server.ts";
 import { combineHeaders } from "./utils/misc.server.ts";
 

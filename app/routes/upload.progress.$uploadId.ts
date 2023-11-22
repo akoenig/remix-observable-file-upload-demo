@@ -13,7 +13,7 @@
 
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { eventStream } from "remix-utils/sse/server";
-import { UploadEvent, uploadEventBus } from "~/utils/UploadEventBus";
+import { UploadEvent, uploadEventBus } from "~/utils/UploadEventBus.server.ts";
 
 export async function loader({ request, params }: LoaderFunctionArgs) {
   const uploadId = params.uploadId;

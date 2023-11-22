@@ -23,11 +23,11 @@ import {
 } from "@remix-run/react";
 
 import { createObservableFileUploadHandler } from "remix-observable-file-uploader";
-import { Card } from "~/components/ui/card";
-import { Progress } from "~/components/ui/progress";
-import { uploadEventBus } from "~/utils/UploadEventBus";
-import { useUploadProgress } from "~/utils/useUploadProgress";
-import { redirectWithConfetti } from "~/utils/confetti.server";
+import { Card } from "~/components/ui/card.tsx";
+import { Progress } from "~/components/ui/progress.tsx";
+import { uploadEventBus } from "~/utils/UploadEventBus.server.ts";
+import { redirectWithConfetti } from "~/utils/confetti.server.ts";
+import { useUploadProgress } from "~/utils/useUploadProgress.ts";
 
 type UploadProgressEvent = Readonly<{
   uploadId: string;
@@ -71,7 +71,6 @@ export async function action({ request }: ActionFunctionArgs) {
   const fileUploadHandler = createObservableFileUploadHandler({
     avoidFileConflicts: true,
     maxPartSize: 100_000_000,
-    directory: "./files/",
     onProgress({ name, filename, uploadedBytes }) {
       const elapsedMilliseconds = Date.now() - start;
 

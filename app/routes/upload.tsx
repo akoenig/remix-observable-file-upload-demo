@@ -17,9 +17,9 @@ import {
   GitHubLogoIcon,
 } from "@radix-ui/react-icons";
 import { Link, NavLink, Outlet } from "@remix-run/react";
-import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
-import { Separator } from "~/components/ui/separator";
-import { cn } from "~/framework/shadcn";
+import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert.tsx";
+import { Separator } from "~/components/ui/separator.tsx";
+import { cn } from "~/framework/shadcn.ts";
 
 export default function Index() {
   return (
