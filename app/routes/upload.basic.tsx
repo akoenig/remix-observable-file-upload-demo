@@ -127,12 +127,13 @@ export default function BasicExample() {
 
           <Button type="submit">Upload</Button>
 
-          {progress?.name ? (
+          {progress?.success && progress.event ? (
             <div className="flex flex-col gap-4">
-              <Progress value={progress.percentageStatus} />
+              <Progress value={progress.event.percentageStatus} />
               <p className="text-center text-muted-foreground">
-                {progress.percentageStatus}% · {progress.uploadedBytes} /{" "}
-                {progress.filesize} bytes transferred
+                {progress.event.percentageStatus}% ·{" "}
+                {progress.event.uploadedBytes} / {progress.event.filesize} bytes
+                transferred
               </p>
             </div>
           ) : null}

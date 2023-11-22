@@ -133,7 +133,6 @@ export default function AdvancedExample() {
           encType="multipart/form-data"
           action={`${currentPath.pathname}?uploadId=${loaderData.uploadId}`}
           onChange={(event) => {
-            console.log(event);
             submit(event.currentTarget);
           }}
         >
@@ -153,23 +152,25 @@ export default function AdvancedExample() {
             />
           </label>
 
-          {progress?.name ? (
+          {progress?.success && progress.event ? (
             <div className="flex flex-col bg-slate-50 rounded-lg p-4 gap-4 border-slate-100 border-[1px]">
               <div className="flex gap-3">
                 <FileIcon className="h-8 w-8" />
                 <div className="flex flex-col gap-1 flex-1">
-                  <h4 className="font-bold text-xs">{progress.filename}</h4>
+                  <h4 className="font-bold text-xs">
+                    {progress.event.filename}
+                  </h4>
                   <div className="flex text-xs text-muted-foreground">
                     <p className="flex-1">
-                      {progress.uploadedKilobytes} KB /{" "}
-                      {progress.filesizeInKilobytes} KB ·{" "}
-                      {progress.remainingDurationInSeconds} seconds left
+                      {progress.event.uploadedKilobytes} KB /{" "}
+                      {progress.event.filesizeInKilobytes} KB ·{" "}
+                      {progress.event.remainingDurationInSeconds} seconds left
                     </p>
-                    <p>{progress.percentageStatus}%</p>
+                    <p>{progress.event.percentageStatus}%</p>
                   </div>
                 </div>
               </div>
-              <Progress value={progress.percentageStatus} />
+              <Progress value={progress.event.percentageStatus} />
             </div>
           ) : null}
         </Form>
