@@ -26,7 +26,7 @@ export default function Index() {
     <div className="hidden space-y-6 p-10 pb-16 md:block">
       <div className="space-y-0.5 flex">
         <h2 className="text-xl font-extrabold tracking-tight flex-1">
-          <Link to="/upload">Remix Observable Uploads</Link>
+          <Link to="/upload/basic">Remix Observable Uploads</Link>
         </h2>
         <ul className="flex gap-4">
           <li>

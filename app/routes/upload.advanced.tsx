@@ -13,8 +13,8 @@
 
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 
-import { json, unstable_parseMultipartFormData } from "@remix-run/node";
 import { FileIcon, InfoCircledIcon, UploadIcon } from "@radix-ui/react-icons";
+import { json, unstable_parseMultipartFormData } from "@remix-run/node";
 import {
   Form,
   useLoaderData,
@@ -22,11 +22,12 @@ import {
   useSubmit,
 } from "@remix-run/react";
 
+import { createObservableFileUploadHandler } from "remix-observable-file-uploader";
 import { Card } from "~/components/ui/card";
 import { Progress } from "~/components/ui/progress";
-import { createObservableFileUploadHandler } from "remix-observable-file-uploader";
 import { uploadEventBus } from "~/utils/UploadEventBus";
 import { useUploadProgress } from "~/utils/useUploadProgress";
+import { redirectWithConfetti } from "~/utils/confetti.server";
 
 type UploadProgressEvent = Readonly<{
   uploadId: string;
@@ -103,7 +104,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
   await unstable_parseMultipartFormData(request, fileUploadHandler);
 
-  return null;
+  return redirectWithConfetti("/upload/done");
 }
 
 export default function AdvancedExample() {

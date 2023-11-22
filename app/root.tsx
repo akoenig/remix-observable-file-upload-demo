@@ -1,25 +1,52 @@
+/**
+ * @akoenig/remix-upload-progress-demo
+ *
+ * Copyright, 2023 - André König, Hamburg, Germany
+ *
+ * All rights reserved
+ */
+
+/**
+ * @author André König <hi@andrekoenig.de>
+ *
+ */
+
+import type { LoaderFunctionArgs } from "@remix-run/node";
+
+import "~/styles/globals.css";
+
 import {
   Link,
   Links,
   LiveReload,
   Meta,
-  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
-  useMatches,
+  useLoaderData,
 } from "@remix-run/react";
 
-import "~/styles/globals.css";
-import { Separator } from "./components/ui/separator";
-import { cn } from "./framework/shadcn";
-import {
-  ExclamationTriangleIcon,
-  HeartFilledIcon,
-} from "@radix-ui/react-icons";
-import { Alert, AlertDescription, AlertTitle } from "./components/ui/alert";
+import { json } from "@remix-run/node";
+import { Confetti } from "~/components/Confetti";
+import { getConfetti } from "./utils/confetti.server.ts";
+import { combineHeaders } from "./utils/misc.server.ts";
+
+export function loader({ request }: LoaderFunctionArgs) {
+  const { confettiId, headers: confettiHeaders } = getConfetti(request);
+
+  return json(
+    {
+      confettiId,
+    },
+    {
+      headers: combineHeaders(confettiHeaders),
+    },
+  );
+}
 
 export default function App() {
+  const loaderData = useLoaderData<typeof loader>();
+
   return (
     <html lang="en" className="h-full">
       <head>
@@ -44,6 +71,8 @@ export default function App() {
             Made by <span className="underline">André König</span>
           </Link>
         </footer>
+
+        <Confetti id={loaderData.confettiId} />
       </body>
     </html>
   );

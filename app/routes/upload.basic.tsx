@@ -19,12 +19,13 @@ import {
   unstable_parseMultipartFormData,
 } from "@remix-run/node";
 import { Form, Link, useLoaderData, useResolvedPath } from "@remix-run/react";
+import { createObservableFileUploadHandler } from "remix-observable-file-uploader";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
 import { Progress } from "~/components/ui/progress";
-import { createObservableFileUploadHandler } from "remix-observable-file-uploader";
 import { uploadEventBus } from "~/utils/UploadEventBus";
 import { useUploadProgress } from "~/utils/useUploadProgress";
+import { redirectWithConfetti } from "~/utils/confetti.server";
 
 type UploadProgressEvent = Readonly<{
   uploadId: string;
@@ -62,6 +63,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const filesize = Number(request.headers.get("Content-Length"));
 
   const fileUploadHandler = createObservableFileUploadHandler({
+    maxPartSize: 100_000_000,
     onProgress({ name, filename, uploadedBytes }) {
       uploadEventBus.emit<UploadProgressEvent>({
         uploadId,
@@ -86,8 +88,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
   await unstable_parseMultipartFormData(request, fileUploadHandler);
 
-  // TODO: Confetti
-  return redirect("/upload/basic");
+  return redirectWithConfetti("/upload/done");
 }
 
 export default function BasicExample() {

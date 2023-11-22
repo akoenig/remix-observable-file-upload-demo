@@ -6,6 +6,7 @@
   "scripts": {
     "build": "vite build && vite build --ssr",
     "dev": "vite dev",
+    "lint": "biome check app --apply",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc"
   },
@@ -19,6 +20,7 @@
     "@remix-run/serve": "^2.3.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "confetti-react": "^2.5.0",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
