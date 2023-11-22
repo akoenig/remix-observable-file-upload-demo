@@ -68,6 +68,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const filesizeInKilobytes = Math.floor(filesize / 1024);
 
   const fileUploadHandler = createObservableFileUploadHandler({
+    maxPartSize: 100_000_000,
     onProgress({ name, filename, uploadedBytes }) {
       const elapsedMilliseconds = Date.now() - start;
 
