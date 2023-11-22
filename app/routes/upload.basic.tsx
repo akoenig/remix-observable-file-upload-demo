@@ -63,6 +63,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const filesize = Number(request.headers.get("Content-Length"));
 
   const fileUploadHandler = createObservableFileUploadHandler({
+    avoidFileConflicts: true,
     maxPartSize: 100_000_000,
     onProgress({ name, filename, uploadedBytes }) {
       uploadEventBus.emit<UploadProgressEvent>({
