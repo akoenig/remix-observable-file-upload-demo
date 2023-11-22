@@ -1,3 +1,16 @@
+/**
+ * @akoenig/remix-upload-progress-demo
+ *
+ * Copyright, 2023 - André König, Hamburg, Germany
+ *
+ * All rights reserved
+ */
+
+/**
+ * @author André König <hi@andrekoenig.de>
+ *
+ */
+
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { eventStream } from "remix-utils/sse/server";
 import { UploadEvent, uploadEventBus } from "~/utils/UploadEventBus";

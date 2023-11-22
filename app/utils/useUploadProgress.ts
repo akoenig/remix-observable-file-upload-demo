@@ -1,9 +1,11 @@
 import { useResolvedPath } from "@remix-run/react";
 import { useEventSource } from "remix-utils/sse/react";
 
-export const useUploadProgress = <T>(uploadId: string) => {
-  const path = useResolvedPath(`./progress/${uploadId}`);
-  const progressStream = useEventSource(path.pathname, { event: uploadId });
+export const useUploadProgress = <T>(uploadId: number) => {
+  // TODO: Make the event source URL configurable
+  const progressStream = useEventSource(`/upload/progress/${uploadId}`, {
+    event: uploadId.toString(),
+  });
 
   if (!progressStream) {
     return null;
