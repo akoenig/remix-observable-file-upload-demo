@@ -4,7 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "vite build && vite build --ssr",
+    "build:client": "vite build",
+    "build:ssr": "vite build --ssr",
+    "build": "bun run build:client && bun run build:ssr",
     "dev": "vite dev",
     "lint": "biome check app --apply",
     "start": "remix-serve ./build/index.js",
