@@ -18,6 +18,26 @@
         }
       }
     },
+    "flyctl@0.1.127": {
+      "last_modified": "2023-11-19T17:46:56Z",
+      "resolved": "github:NixOS/nixpkgs/0bf3f5cf6a98b5d077cdcdb00a6d4b3d92bc78b5#flyctl",
+      "source": "devbox-search",
+      "version": "0.1.127",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/2ysmzrmqw9mk006m02p7sg2a3y871cqj-flyctl-0.1.127"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/n1hpwpwdr2smxs4489rsj9ippq9vm1ra-flyctl-0.1.127"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/gpbrjpnj8q4cf7wbdhqd2bx82h18ycj8-flyctl-0.1.127"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/y27kki46r3bfcsgjjdphizzcfsllpxif-flyctl-0.1.127"
+        }
+      }
+    },
     "nodejs@20": {
       "last_modified": "2023-10-25T20:49:13Z",
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nodejs_20",

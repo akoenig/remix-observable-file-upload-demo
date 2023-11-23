@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.3.3",
+    "@flydotio/dockerfile": "latest",
     "@remix-run/dev": "^2.3.0",
     "@remix-run/eslint-config": "^2.3.0",
     "@types/react": "^18.2.20",

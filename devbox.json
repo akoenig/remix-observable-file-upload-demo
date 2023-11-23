@@ -1,7 +1,8 @@
 {
   "packages": [
     "nodejs@20",
-    "bun@1"
+    "bun@1",
+    "flyctl@0.1.127"
   ],
   "shell": {
     "init_hook": [
