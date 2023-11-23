@@ -15,13 +15,13 @@ import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { json, unstable_parseMultipartFormData } from "@remix-run/node";
 import { Form, Link, useLoaderData, useResolvedPath } from "@remix-run/react";
-import { createObservableFileUploadHandler } from "remix-observable-file-uploader";
 import { Button } from "~/components/ui/button.tsx";
 import { Card } from "~/components/ui/card.tsx";
 import { Progress } from "~/components/ui/progress.tsx";
 import { uploadEventBus } from "~/utils/UploadEventBus.server.ts";
 import { redirectWithConfetti } from "~/utils/confetti.server.ts";
 import { useUploadProgress } from "~/utils/useUploadProgress.ts";
+import { createObservableFileUploadHandler } from "~/utils/createObservableFileUploadHandler.server";
 
 type UploadProgressEvent = Readonly<{
   uploadId: string;

@@ -22,12 +22,12 @@ import {
   useSubmit,
 } from "@remix-run/react";
 
-import { createObservableFileUploadHandler } from "remix-observable-file-uploader";
 import { Card } from "~/components/ui/card.tsx";
 import { Progress } from "~/components/ui/progress.tsx";
 import { uploadEventBus } from "~/utils/UploadEventBus.server.ts";
 import { redirectWithConfetti } from "~/utils/confetti.server.ts";
 import { useUploadProgress } from "~/utils/useUploadProgress.ts";
+import { createObservableFileUploadHandler } from "~/utils/createObservableFileUploadHandler.server";
 
 type UploadProgressEvent = Readonly<{
   uploadId: string;
