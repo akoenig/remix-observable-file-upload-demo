@@ -41,7 +41,7 @@ export const meta: MetaFunction = () => [
 ];
 
 export function loader() {
-  const uploadId = nanoid()
+  const uploadId = nanoid();
 
   return json({ uploadId });
 }
@@ -101,17 +101,17 @@ export default function BasicExample() {
       <header className="flex flex-col gap-2">
         <h3 className="text-xl font-bold">Basic Example</h3>
         <p className="text-muted-foreground">
-          This example showcases a basic implementation of an observable file
-          upload by utilizing an file input field an a action. Although the
-          actual client implementation is straightforward, the demo still
-          streams the upload progress to the client via{" "}
+          This example demonstrates a basic implementation of an observable file
+          upload by utilizing a file input field and an action. Although the
+          client implementation is straightforward, the example streams the
+          upload progress to the client via{" "}
           <Link
             className="text-pink-500 underline"
             to="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events"
           >
             SSE
-          </Link>
-          .
+          </Link>{" "}
+          and displays it as a progress bar.
         </p>
       </header>
 
