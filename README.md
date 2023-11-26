@@ -1,6 +1,6 @@
 # remix-observable-file-upload-demo
 
-![Screenshot of the demo application with a file upload which visualizes the status with a progress bar](/assets/ad6e4b67-8ff2-4e8a-b520-65a2cf74fa67.gif)
+![Screenshot of the demo application with a file upload which visualizes the status with a progress bar](assets/ad6e4b67-8ff2-4e8a-b520-65a2cf74fa67.gif)
 
 This repository contains a demo application which showcases user file uploads with real-time progress tracking:
 

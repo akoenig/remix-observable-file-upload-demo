@@ -38,7 +38,7 @@ export default function Index() {
             </Link>
           </li>
           <li>
-            <Link to="" className="flex items-center gap-1">
+            <Link to="https://andrekoenig.de/articles/real-time-file-upload-progress-remix" className="flex items-center gap-1">
               <FileTextIcon /> Docs
             </Link>
           </li>
