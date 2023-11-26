@@ -17,18 +17,19 @@ import { FileIcon, InfoCircledIcon, UploadIcon } from "@radix-ui/react-icons";
 import { json, unstable_parseMultipartFormData } from "@remix-run/node";
 import {
   Form,
+  Link,
   useLoaderData,
   useResolvedPath,
   useSubmit,
 } from "@remix-run/react";
 
+import { nanoid } from "nanoid";
 import { Card } from "~/components/ui/card.tsx";
 import { Progress } from "~/components/ui/progress.tsx";
 import { uploadEventBus } from "~/utils/UploadEventBus.server.ts";
 import { redirectWithConfetti } from "~/utils/confetti.server.ts";
-import { useUploadProgress } from "~/utils/useUploadProgress.ts";
 import { createObservableFileUploadHandler } from "~/utils/createObservableFileUploadHandler.server.ts";
-import { nanoid } from "nanoid";
+import { useUploadProgress } from "~/utils/useUploadProgress.ts";
 
 type UploadProgressEvent = Readonly<{
   uploadId: string;
@@ -47,7 +48,7 @@ export const meta: MetaFunction = () => [
 ];
 
 export function loader() {
-  const uploadId = nanoid()
+  const uploadId = nanoid();
 
   return json({ uploadId });
 }
@@ -122,9 +123,12 @@ export default function AdvancedExample() {
         <h3 className="text-xl font-bold">Advanced Example</h3>
         <p className="text-muted-foreground">
           This example showcases an advanced implementation of an observable
-          file upload. In addition to observing the progress, it also displays
-          the uploaded bytes and provides an estimate of the remaining upload
-          time.
+          file upload. It does everythink the{" "}
+          <Link to="/upload/basic" className="text-pink-500 underline">
+            basic example
+          </Link>{" "}
+          does, plus it also displays the uploaded bytes and provides an
+          estimate of the remaining upload time.
         </p>
       </header>
 

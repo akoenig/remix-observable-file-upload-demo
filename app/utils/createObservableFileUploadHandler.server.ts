@@ -14,7 +14,7 @@
 /**
  * This is a fork of the official [unstable_createFileUploadHandler](https://github.com/remix-run/remix/blob/main/packages/remix-node/upload/fileUploadHandler.ts)
  * function by me [André König](https://andrekoenig.de).
- * 
+ *
  * I have extended the upload handler with two new callback functions
  * that can be defined to receive updates on the upload progress and
  * the status of a completed upload.
