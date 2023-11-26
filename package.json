@@ -1,5 +1,5 @@
 {
-  "name": "@akoenig/remix-upload-progress-demo",
+  "name": "@akoenig/remix-observable-file-upload-demo",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -22,6 +22,7 @@
     "clsx": "^2.0.0",
     "confetti-react": "^2.5.0",
     "isbot": "^3.6.8",
+    "nanoid": "^5.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remix-utils": "^7.1.0",

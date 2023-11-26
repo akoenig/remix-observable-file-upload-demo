@@ -1,5 +1,5 @@
 /**
- * @akoenig/remix-upload-progress-demo
+ * @akoenig/remix-observable-file-upload-demo
  *
  * Copyright, 2023 - André König, Hamburg, Germany
  *
@@ -20,12 +20,12 @@ export type UploadEvent = Readonly<{
 class UploadEventBus {
   private readonly bus = new EventEmitter();
 
-  addListener<T>(id: string, listener: (event: T) => void) {
-    this.bus.addListener(id, listener);
+  addListener<T>(uploadId: string, listener: (event: T) => void) {
+    this.bus.addListener(uploadId, listener);
   }
 
-  removeListener<T>(id: string, listener: (event: T) => void) {
-    this.bus.removeListener(id, listener);
+  removeListener<T>(uploadId: string, listener: (event: T) => void) {
+    this.bus.removeListener(uploadId, listener);
   }
 
   emit<T extends UploadEvent>(event: T) {

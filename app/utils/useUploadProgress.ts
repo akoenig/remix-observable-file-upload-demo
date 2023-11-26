@@ -1,5 +1,5 @@
 /**
- * @akoenig/remix-upload-progress-demo
+ * @akoenig/remix-observable-file-upload-demo
  *
  * Copyright, 2023 - André König, Hamburg, Germany
  *
@@ -14,7 +14,7 @@
 import { useEventSource } from "remix-utils/sse/react";
 
 export const useUploadProgress = <T>(
-  uploadId: number,
+  uploadId: string,
   progressBaseUrl = "/upload/progress",
 ) => {
   const progressStream = useEventSource(`${progressBaseUrl}/${uploadId}`, {

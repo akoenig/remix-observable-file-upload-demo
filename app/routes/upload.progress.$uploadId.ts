@@ -1,5 +1,5 @@
 /**
- * @akoenig/remix-upload-progress-demo
+ * @akoenig/remix-observable-file-upload-demo
  *
  * Copyright, 2023 - André König, Hamburg, Germany
  *
@@ -11,14 +11,15 @@
  *
  */
 
-import { LoaderFunctionArgs } from "@remix-run/node";
+import type { LoaderFunctionArgs } from "@remix-run/node";
+import type { UploadEvent } from "~/utils/UploadEventBus.server.ts";
+
 import { eventStream } from "remix-utils/sse/server";
-import { UploadEvent, uploadEventBus } from "~/utils/UploadEventBus.server.ts";
+import { uploadEventBus } from "~/utils/UploadEventBus.server.ts";
 
 export async function loader({ request, params }: LoaderFunctionArgs) {
   const uploadId = params.uploadId;
 
-  // TODO: Add zod parsing
   if (!uploadId) {
     throw new Response(null, {
       status: 400,

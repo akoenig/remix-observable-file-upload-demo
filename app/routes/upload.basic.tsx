@@ -1,5 +1,5 @@
 /**
- * @akoenig/remix-upload-progress-demo
+ * @akoenig/remix-observable-file-upload-demo
  *
  * Copyright, 2023 - André König, Hamburg, Germany
  *
@@ -10,6 +10,7 @@
  * @author André König <hi@andrekoenig.de>
  *
  */
+
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 
 import { InfoCircledIcon } from "@radix-ui/react-icons";
@@ -21,7 +22,8 @@ import { Progress } from "~/components/ui/progress.tsx";
 import { uploadEventBus } from "~/utils/UploadEventBus.server.ts";
 import { redirectWithConfetti } from "~/utils/confetti.server.ts";
 import { useUploadProgress } from "~/utils/useUploadProgress.ts";
-import { createObservableFileUploadHandler } from "~/utils/createObservableFileUploadHandler.server";
+import { createObservableFileUploadHandler } from "~/utils/createObservableFileUploadHandler.server.ts";
+import { nanoid } from "nanoid";
 
 type UploadProgressEvent = Readonly<{
   uploadId: string;
@@ -39,7 +41,7 @@ export const meta: MetaFunction = () => [
 ];
 
 export function loader() {
-  const uploadId = Date.now();
+  const uploadId = nanoid()
 
   return json({ uploadId });
 }
@@ -58,7 +60,7 @@ export async function action({ request }: ActionFunctionArgs) {
   // Get the overall filesize of the uploadable file.
   const filesize = Number(request.headers.get("Content-Length"));
 
-  const fileUploadHandler = createObservableFileUploadHandler({
+  const observableFileUploadHandler = createObservableFileUploadHandler({
     avoidFileConflicts: true,
     maxPartSize: 100_000_000,
     onProgress({ name, filename, uploadedBytes }) {
@@ -83,7 +85,7 @@ export async function action({ request }: ActionFunctionArgs) {
     },
   });
 
-  await unstable_parseMultipartFormData(request, fileUploadHandler);
+  await unstable_parseMultipartFormData(request, observableFileUploadHandler);
 
   return redirectWithConfetti("/upload/done");
 }

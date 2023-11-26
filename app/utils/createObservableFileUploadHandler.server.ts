@@ -1,4 +1,17 @@
 /**
+ * @akoenig/remix-observable-file-upload-demo
+ *
+ * Copyright, 2023 - André König, Hamburg, Germany
+ *
+ * All rights reserved
+ */
+
+/**
+ * @author André König <hi@andrekoenig.de>
+ *
+ */
+
+/**
  * This is a fork of the official [unstable_createFileUploadHandler](https://github.com/remix-run/remix/blob/main/packages/remix-node/upload/fileUploadHandler.ts)
  * function by me [André König](https://andrekoenig.de).
  * 

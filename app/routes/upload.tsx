@@ -1,5 +1,5 @@
 /**
- * @akoenig/remix-upload-progress-demo
+ * @akoenig/remix-observable-file-upload-demo
  *
  * Copyright, 2023 - André König, Hamburg, Germany
  *
