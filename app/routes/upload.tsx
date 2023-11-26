@@ -23,12 +23,12 @@ import { cn } from "~/framework/shadcn.ts";
 
 export default function Index() {
   return (
-    <div className="hidden space-y-6 p-10 pb-16 md:block">
-      <div className="space-y-0.5 flex">
+    <div className="space-y-6 p-10 pb-16 md:block">
+      <div className="space-y-6 md:space-y-0.5 flex flex-col md:flex-row">
         <h2 className="text-xl font-extrabold tracking-tight flex-1">
           <Link to="/upload/basic">Remix Observable Uploads</Link>
         </h2>
-        <ul className="flex gap-4">
+        <ul className="flex flex-col md:flex-row gap-4">
           <li>
             <Link
               to="https://github.com/akoenig/remix-observable-file-uploads-demo"
@@ -38,7 +38,10 @@ export default function Index() {
             </Link>
           </li>
           <li>
-            <Link to="https://andrekoenig.de/articles/real-time-file-upload-progress-remix" className="flex items-center gap-1">
+            <Link
+              to="https://andrekoenig.de/articles/real-time-file-upload-progress-remix"
+              className="flex items-center gap-1"
+            >
               <FileTextIcon /> Docs
             </Link>
           </li>

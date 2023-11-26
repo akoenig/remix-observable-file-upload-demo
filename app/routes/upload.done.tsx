@@ -24,7 +24,7 @@ export default function UploadDone() {
     <div className="flex flex-col justify-center items-center gap-4">
       <h1 className="text-6xl font-extrabold">🎉</h1>
       <h2 className="text-4xl font-extrabold">Hooray!</h2>
-      <p className="text-2xl text-muted-foreground">
+      <p className="text-2xl text-muted-foreground text-center">
         Your file upload was successful.
       </p>
     </div>
