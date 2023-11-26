@@ -123,12 +123,12 @@ export default function AdvancedExample() {
         <h3 className="text-xl font-bold">Advanced Example</h3>
         <p className="text-muted-foreground">
           This example showcases an advanced implementation of an observable
-          file upload. It does everythink the{" "}
+          file upload. It includes everything that the{" "}
           <Link to="/upload/basic" className="text-pink-500 underline">
             basic example
           </Link>{" "}
-          does, plus it also displays the uploaded bytes and provides an
-          estimate of the remaining upload time.
+          offers, and it also provides additional features such as displaying
+          the uploaded bytes and estimating the remaining upload time.
         </p>
       </header>
 
