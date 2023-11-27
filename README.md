@@ -4,7 +4,7 @@
 
 This repository contains a demo application which showcases user file uploads with real-time progress tracking:
 
-- Article: [Real-Time File Upload Progress with Remix](https://andrekoenig.de/articles/real-time-file-upload-progress-remix)
+- Article: [Progressively Enhanced File Uploads with Remix](https://andrekoenig.de/articles/progressively-enhanced-file-uploads-remix)
 - Demo: [https://demo-remix-observable-file-upload.fly.dev/](https://demo-remix-observable-file-upload.fly.dev/)
 
 ## License
