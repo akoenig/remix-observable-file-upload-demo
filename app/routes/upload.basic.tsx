@@ -50,6 +50,8 @@ export async function action({ request }: ActionFunctionArgs) {
   const url = new URL(request.url);
   const uploadId = url.searchParams.get("uploadId");
 
+  const maxPartSize = 100_000_000;
+
   if (!uploadId) {
     throw new Response(null, {
       status: 400,
@@ -60,9 +62,16 @@ export async function action({ request }: ActionFunctionArgs) {
   // Get the overall filesize of the uploadable file.
   const filesize = Number(request.headers.get("Content-Length"));
 
+  if (filesize > maxPartSize) {
+    throw new Response(null, {
+      status: 400,
+      statusText: "File size exceeded",
+    });
+  }
+
   const observableFileUploadHandler = createObservableFileUploadHandler({
     avoidFileConflicts: true,
-    maxPartSize: 100_000_000,
+    maxPartSize,
     onProgress({ name, filename, uploadedBytes }) {
       uploadEventBus.emit<UploadProgressEvent>({
         uploadId,
@@ -125,6 +134,19 @@ export default function BasicExample() {
           <input name="the-file" type="file" />
 
           <Button type="submit">Upload</Button>
+
+          <p className="text-center text-muted-foreground">
+            <small>
+              max. 100 MB (configurable via{" "}
+              <Link
+                to="https://github.com/akoenig/remix-observable-file-upload-demo/blob/33aa02bfa7703e02b2ea0033f6f83135ffb361ca/app/routes/upload.basic.tsx#L65"
+                className="text-pink-500 underline"
+              >
+                maxPartSize
+              </Link>
+              )
+            </small>
+          </p>
 
           {progress?.success && progress.event ? (
             <div className="flex flex-col gap-4">
