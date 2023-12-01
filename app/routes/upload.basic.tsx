@@ -50,7 +50,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const url = new URL(request.url);
   const uploadId = url.searchParams.get("uploadId");
 
-  const maxPartSize = 100_000_000;
+  const maxPartSize = 100_000_000; // 100 MB
 
   if (!uploadId) {
     throw new Response(null, {

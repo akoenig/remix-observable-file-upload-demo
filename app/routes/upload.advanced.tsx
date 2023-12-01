@@ -56,7 +56,7 @@ export function loader() {
 export async function action({ request }: ActionFunctionArgs) {
   const start = Date.now();
 
-  const maxPartSize = 100_000_000;
+  const maxPartSize = 100_000_000; // 100 MB
 
   const url = new URL(request.url);
   const uploadId = url.searchParams.get("uploadId");
