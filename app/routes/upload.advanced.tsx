@@ -172,7 +172,7 @@ export default function AdvancedExample() {
             <small>
               max. 100 MB (configurable via{" "}
               <Link
-                to="https://github.com/akoenig/remix-observable-file-upload-demo/blob/33aa02bfa7703e02b2ea0033f6f83135ffb361ca/app/routes/upload.advanced.tsx#L75"
+                to="https://github.com/akoenig/remix-observable-file-upload-demo/blob/d617b3a3f90fe8e87ef56081cf95512095332b6e/app/routes/upload.advanced.tsx#L85"
                 className="text-pink-500 underline"
               >
                 maxPartSize
