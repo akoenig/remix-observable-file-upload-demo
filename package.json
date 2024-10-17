@@ -30,7 +30,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.4.1",
+    "@biomejs/biome": "1.9.4",
     "@flydotio/dockerfile": "latest",
     "@remix-run/dev": "^2.3.0",
     "@remix-run/eslint-config": "^2.3.0",
