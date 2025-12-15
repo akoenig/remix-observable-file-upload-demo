@@ -1,6 +1,6 @@
 {
   "packages": [
-    "nodejs@20",
+    "nodejs@20.19.6",
     "bun@1",
     "flyctl@0.1.127"
   ]
