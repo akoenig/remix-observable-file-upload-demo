@@ -1,20 +1,51 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "bun@1": {
-      "last_modified": "2023-11-09T21:23:13Z",
-      "resolved": "github:NixOS/nixpkgs/1f37660f64a850233baab512c9b9bd83fb72be57#bun",
+    "bun@1.3.13": {
+      "last_modified": "2026-05-03T16:35:46Z",
+      "resolved": "github:NixOS/nixpkgs/73c703c22422b8951895a960959dbbaca7296492#bun",
       "source": "devbox-search",
-      "version": "1.0.11",
+      "version": "1.3.13",
       "systems": {
         "aarch64-darwin": {
-          "store_path": "/nix/store/h5n8rgpkmd64q9ykxgifki7zn8g5iq7d-bun-1.0.11"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/i4rqz2p2bayrl6pv9l36y4fzhqx7k1zv-bun-1.3.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/i4rqz2p2bayrl6pv9l36y4fzhqx7k1zv-bun-1.3.13"
         },
         "aarch64-linux": {
-          "store_path": "/nix/store/2x7a9cgdcssfcg72fqz7yxqwacc169n9-bun-1.0.11"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1q2xsp98qhjy6rsz3nga795c3mgsjhia-bun-1.3.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1q2xsp98qhjy6rsz3nga795c3mgsjhia-bun-1.3.13"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/31jsiwr1nq8pi4jvyjpq0zi28a4fyay0-bun-1.3.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/31jsiwr1nq8pi4jvyjpq0zi28a4fyay0-bun-1.3.13"
         },
         "x86_64-linux": {
-          "store_path": "/nix/store/zqprz2gxw7vn23hjzkzdkvvyr3yjs1y1-bun-1.0.11"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/g0zlmqvkvn41xqva3460jfzpazivywvi-bun-1.3.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/g0zlmqvkvn41xqva3460jfzpazivywvi-bun-1.3.13"
         }
       }
     },
@@ -40,6 +71,7 @@
     },
     "nodejs@20": {
       "last_modified": "2023-10-25T20:49:13Z",
+      "plugin_version": "0.0.2",
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nodejs_20",
       "source": "devbox-search",
       "version": "20.9.0",
