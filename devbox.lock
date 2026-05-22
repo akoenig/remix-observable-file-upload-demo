@@ -18,28 +18,57 @@
         }
       }
     },
-    "flyctl@0.1.127": {
-      "last_modified": "2023-11-19T17:46:56Z",
-      "resolved": "github:NixOS/nixpkgs/0bf3f5cf6a98b5d077cdcdb00a6d4b3d92bc78b5#flyctl",
+    "flyctl@0.4.52": {
+      "last_modified": "2026-05-20T06:38:13Z",
+      "resolved": "github:NixOS/nixpkgs/d99b013d5d1931ad77fe3912ed218170dec5d9a4#flyctl",
       "source": "devbox-search",
-      "version": "0.1.127",
+      "version": "0.4.52",
       "systems": {
         "aarch64-darwin": {
-          "store_path": "/nix/store/2ysmzrmqw9mk006m02p7sg2a3y871cqj-flyctl-0.1.127"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pg48mas4hicaxhyapx8p4klrlhm1kpa0-flyctl-0.4.52",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/pg48mas4hicaxhyapx8p4klrlhm1kpa0-flyctl-0.4.52"
         },
         "aarch64-linux": {
-          "store_path": "/nix/store/n1hpwpwdr2smxs4489rsj9ippq9vm1ra-flyctl-0.1.127"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hayh6cwwrcbwx6p6v8jimd0bkhcappwy-flyctl-0.4.52",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hayh6cwwrcbwx6p6v8jimd0bkhcappwy-flyctl-0.4.52"
         },
         "x86_64-darwin": {
-          "store_path": "/nix/store/gpbrjpnj8q4cf7wbdhqd2bx82h18ycj8-flyctl-0.1.127"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kds2yg47h3skzyd3h82wyq2n0kh772k9-flyctl-0.4.52",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kds2yg47h3skzyd3h82wyq2n0kh772k9-flyctl-0.4.52"
         },
         "x86_64-linux": {
-          "store_path": "/nix/store/y27kki46r3bfcsgjjdphizzcfsllpxif-flyctl-0.1.127"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/64pbmiafamljpbkrsjwy9sn7vvgi720y-flyctl-0.4.52",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/64pbmiafamljpbkrsjwy9sn7vvgi720y-flyctl-0.4.52"
         }
       }
     },
     "nodejs@20": {
       "last_modified": "2023-10-25T20:49:13Z",
+      "plugin_version": "0.0.2",
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nodejs_20",
       "source": "devbox-search",
       "version": "20.9.0",
